@@ -159,3 +159,21 @@ minetest.register_craft({
 		{"tropical:paper_block", "tropical:paper_block", "tropical:paper_block"},
 	}
 })
+
+
+
+
+-- Spawn Bees From Various Mods :)
+
+if core.get_modpath("mobs_animal") then
+
+	mobs:spawn({
+		name = "mobs_animal:bee",
+		nodes = {"tropical:hive"},
+		max_light = 7,
+		interval = 60,
+		chance = 4000,
+		min_height = -4000,
+		max_height = 0
+	})
+end

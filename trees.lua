@@ -3,7 +3,7 @@
 tropical.trees = {
 	{"kapok",      "Kapok"},
 	{"rainbow_eucalyptus",       "Rainbow Eucalyptus"},
-	{"rosewood",       "Rosewood"},
+	{"pink_ivory",       "Pink Ivory"},
 }
 
 local trees = tropical.trees
@@ -98,3 +98,77 @@ for i = 1, #trees do
 		sounds = default.node_sound_wood_defaults(),
 	})
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Treegen
+
+	minetest.register_decoration({
+		name = "tropical:pink_ivory_tree",
+		deco_type = "schematic",
+		place_on = {"default:dirt_with_grass"},
+		sidelen = 16,
+		fill_ratio = 0.0005,
+		noise_params = {
+			offset = 0,
+			scale = 0.002,
+			spread = {x = 250, y = 250, z = 250},
+			seed = 2,
+			octaves = 3,
+			persist = 0.65
+		},
+		biomes = {"tropics"},
+		y_max = 31000,
+		y_min = 1,
+		schematic = minetest.get_modpath("tropical") .. "/schematics/pink_ivory_1.mts",
+		flags = "place_center_x, place_center_z, force_placement",
+		rotation = "random",
+	})
+
+local chunksize
+	if core.get_mapgen_chunksize then
+		local v = core.get_mapgen_chunksize()
+		chunksize = math.max(v.x, v.y, v.z)
+	else
+		chunksize = tonumber(core.get_mapgen_setting("chunksize"))
+	end
+	if chunksize >= 5 then
+		minetest.register_decoration({
+			name = "tropical:emergent_kapok_tree",
+			deco_type = "schematic",
+			place_on = {"default:dirt_with_grass"},
+			sidelen = 80,
+			noise_params = {
+				offset = 0.0,
+				scale = 0.0025,
+				spread = {x = 250, y = 250, z = 250},
+				seed = 2685,
+				octaves = 3,
+				persist = 0.7
+			},
+			biomes = {"tropics"},
+			y_max = 32,
+			y_min = 1,
+			schematic = minetest.get_modpath("tropical") ..
+					"/schematics/emergent_kapok_tree.mts",
+			flags = "place_center_x, place_center_z",
+			rotation = "random",
+			place_offset_y = -4,
+		        rotation = "random",
+		})
+	end

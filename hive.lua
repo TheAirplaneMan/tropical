@@ -128,7 +128,7 @@ minetest.register_decoration({
 	fill_ratio = 0.00002,
 	y_max = 0,
 	y_min = -4000,
-	biomes = {"rainforest_ocean", "rainforest_under"},
+	biomes = {"rainforest_ocean", "rainforest_under", "tropics_ocean", "tropics_under"},
 	schematic = minetest.get_modpath("tropical") .. "/schematics/hive_1.mts",
 	flags = "place_center_x, place_center_z, force_placement, all_floors",
 	rotation = "random",

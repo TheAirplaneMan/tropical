@@ -31,6 +31,37 @@ minetest.register_node("tropical:sandstone_block", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
+minetest.register_craft({
+	output = "tropical:sandstone",
+	recipe = {
+		{"tropical:sand", "tropical:sand"},
+		{"tropical:sand", "tropical:sand"},
+	}
+})
+
+minetest.register_craft({
+	output = "tropical:sand 4",
+	recipe = {
+		{"tropical:sandstone"},
+	}
+})
+
+minetest.register_craft({
+	output = "tropical:sandstone_brick 4",
+	recipe = {
+		{"tropical:sandstone", "tropical:sandstone"},
+		{"tropical:sandstone", "tropical:sandstone"},
+	}
+})
+
+minetest.register_craft({
+	output = "tropical:sandstone_block 9",
+	recipe = {
+		{"tropical:sandstone", "tropical:sandstone", "tropical:sandstone"},
+		{"tropical:sandstone", "tropical:sandstone", "tropical:sandstone"},
+		{"tropical:sandstone", "tropical:sandstone", "tropical:sandstone"},
+	}
+})
 
 
 -- Register Stairs

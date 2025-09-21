@@ -99,3 +99,39 @@ if minetest.get_modpath("coconut_tree") then
 	})
 
 end
+
+	minetest.register_ore({
+		ore_type        = "stratum",
+		ore             = "tropical:sandstone",
+		wherein         = {"default:stone"},
+		clust_scarcity  = 1,
+		y_max           = 46,
+		y_min           = 10,
+		noise_params    = {
+			offset = 28,
+			scale = 16,
+			spread = {x = 128, y = 128, z = 128},
+			seed = 90122,
+			octaves = 1,
+		},
+		stratum_thickness = 4,
+		biomes = {"tropics"},
+	})
+
+	minetest.register_ore({
+		ore_type        = "stratum",
+		ore             = "tropical:sandstone",
+		wherein         = {"default:stone"},
+		clust_scarcity  = 1,
+		y_max           = 42,
+		y_min           = 6,
+		noise_params    = {
+			offset = 24,
+			scale = 16,
+			spread = {x = 128, y = 128, z = 128},
+			seed = 90122,
+			octaves = 1,
+		},
+		stratum_thickness = 2,
+		biomes = {"tropics"},
+	})

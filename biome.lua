@@ -10,7 +10,7 @@
 		node_dungeon_alt = "default:mossycobble",
 		node_dungeon_stair = "stairs:stair_cobble",
 		y_max = 31000,
-		y_min = 1,
+		y_min = 4,
 		heat_point = 90,
 		humidity_point = 75,
 	})
@@ -26,7 +26,7 @@
 		node_dungeon = "default:cobble",
 		node_dungeon_alt = "default:mossycobble",
 		node_dungeon_stair = "stairs:stair_cobble",
-		y_max = 0,
+		y_max = 3,
 		y_min = -1,
 		heat_point = 90,
 		humidity_point = 75,
@@ -63,19 +63,39 @@
 		humidity_point = 75,
 	})
 
+	minetest.register_ore({
+		ore_type        = "blob",
+		ore             = "default:gravel",
+		wherein         = {"tropical:sand"},
+		clust_scarcity  = 16 * 16 * 16,
+		clust_size      = 5,
+		y_max           = 0,
+		y_min           = -15,
+		noise_threshold = 0.0,
+		noise_params    = {
+			offset = 0.5,
+			scale = 0.2,
+			spread = {x = 5, y = 5, z = 5},
+			seed = -32001
+			octaves = 1,
+			persist = 0.0
+		},
+	})
 
 
-
+if minetest.get_modpath("mobs_animal") then
 
 minetest.register_decoration({
 	name = "tropical:coconut_tree",
 	deco_type = "schematic",
-	place_on = {"default:sand"},
+	place_on = {"tropical:sand"},
 	sidelen = 16,
-	fill_ratio = 0.005,
+	fill_ratio = 0.0005,
 	biomes = {"tropics_beach"},
 	y_max = 10,
-	y_min = 0,
+	y_min = 1,
 	schematic = minetest.get_modpath("coconut_tree") .. "/schematics/coconut_tree.mts",
 	flags = "place_center_x, place_center_z, force_placement",
 })
+
+end

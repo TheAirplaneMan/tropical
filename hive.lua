@@ -165,7 +165,7 @@ minetest.register_craft({
 
 -- Spawn Bees From Various Mods :)
 
-if core.get_modpath("mobs_animal") then
+if minetest.get_modpath("mobs_animal") then
 
 	mobs:spawn({
 		name = "mobs_animal:bee",

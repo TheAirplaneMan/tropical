@@ -76,26 +76,26 @@
 			offset = 0.5,
 			scale = 0.2,
 			spread = {x = 5, y = 5, z = 5},
-			seed = -32001
+			seed = -32001,
 			octaves = 1,
 			persist = 0.0
 		},
 	})
 
 
-if minetest.get_modpath("mobs_animal") then
+if minetest.get_modpath("coconut_tree") then
 
-minetest.register_decoration({
-	name = "tropical:coconut_tree",
-	deco_type = "schematic",
-	place_on = {"tropical:sand"},
-	sidelen = 16,
-	fill_ratio = 0.0005,
-	biomes = {"tropics_beach"},
-	y_max = 10,
-	y_min = 1,
-	schematic = minetest.get_modpath("coconut_tree") .. "/schematics/coconut_tree.mts",
-	flags = "place_center_x, place_center_z, force_placement",
-})
+	minetest.register_decoration({
+		name = "tropical:coconut_tree",
+		deco_type = "schematic",
+		place_on = {"tropical:sand"},
+		sidelen = 16,
+		fill_ratio = 0.0005,
+		biomes = {"tropics_beach"},
+		y_max = 10,
+		y_min = 1,
+		schematic = minetest.get_modpath("coconut_tree") .. "/schematics/coconut_tree.mts",
+		flags = "place_center_x, place_center_z, force_placement",
+	})
 
 end

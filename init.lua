@@ -125,11 +125,37 @@ minetest.register_decoration({
 	deco_type = "schematic",
 	place_on = {"default:stone"},
 	sidelen = 100,
-	fill_ratio = 0.00004,
+	fill_ratio = 0.00002,
 	y_max = 0,
 	y_min = -4000,
 	biomes = {"rainforest_ocean", "rainforest_under"},
 	schematic = minetest.get_modpath("tropical") .. "/schematics/hive_1.mts",
 	flags = "place_center_x, place_center_z, force_placement, all_floors",
 	rotation = "random",
+})
+
+
+
+
+
+
+-- Hive Paper
+
+minetest.register_craftitem("tropical:hive_paper", {
+	description = ("Bee Paper"),
+	inventory_image = "tropical_hive_paper.png"
+})
+
+minetest.register_craft({
+	output = "default:paper",
+	recipe = {
+		{"tropical:hive_paper", "tropical:hive_paper", "tropical:hive_paper"},
+	}
+})
+
+minetest.register_craft({
+	output = "tropical:hive_paper",
+	recipe = {
+		{"tropical:paper_block", "tropical:paper_block", "tropical:paper_block"},
+	}
 })

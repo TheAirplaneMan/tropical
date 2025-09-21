@@ -170,7 +170,7 @@ if core.get_modpath("mobs_animal") then
 	mobs:spawn({
 		name = "mobs_animal:bee",
 		nodes = {"tropical:hive"},
-		max_light = 7,
+		max_light = 15,
 		interval = 60,
 		chance = 4000,
 		min_height = -4000,
